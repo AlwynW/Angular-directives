@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+    <title>Checkbox group demo</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.js"></script>
+    <script>
+        demoApp = angular.module('demoApp', []);
+        demoApp.controller('chkDemoController', function($scope){
+            $scope.selectedOptions = '';
+            $scope.selectedOptions2 = '2,3';
+
+            $scope.demoCollection = [
+                {
+                    id: 1,
+                    label: 'first'
+                },
+                {
+                    id: 2,
+                    label: 'second'
+                },
+                {
+                    id: 3,
+                    label: 'third'
+                }
+            ]
+        });
+
+    </script>
+    <script src="../directives/ChkGroup.js"></script>
+
+</head>
+<body ng-controller="chkDemoController">
+<div class="container">
+    <h1>Installation</h1>
+    <ol>
+        <li>Copy the necessary file(s) to your project (directives/ChkGroup)
+        <li>Change demoApp reference in directives/ChkGroup.js to your module reference.
+        <li>Add directive in template, check for parameters in source code/chkGroup directive
+    </ol>
+
+    <hr>
+
+    <h1>Demo</h1>
+
+    <form class="form form-horizontal">
+    <h2>No initial selection</h2>
+        <h3>Code</h3>
+        <pre>
+&lt;chkgroup selected-value="selectedOptions"
+          options="demoCollection"
+          id-field="id"
+          label-field="label"&gt;
+&lt;/chkgroup&gt;
+        </pre>
+        <h3>Result</h3>
+    <chkgroup selected-value="selectedOptions"
+              options="demoCollection"
+              id-field="id"
+              label-field="label">
+    </chkgroup>
+
+    <span class="help-block">Currently selected: {{selectedOptions}}</span>
+
+    <h2>Second and third option already selected</h2>
+        <h3>Code</h3>
+     <pre>
+&lt;chkgroup selected-value="selectedOptions2"
+           options="demoCollection"
+           id-field="id"
+           label-field="label"&gt;
+&lt;/chkgroup&gt;
+     </pre>
+        <h3>Result</h3>
+        <chkgroup selected-value="selectedOptions2"
+              options="demoCollection"
+              id-field="id"
+              label-field="label">
+        </chkgroup>
+        <span class="help-block">Currently selected: {{selectedOptions2}}</span>
+
+
+    </form>
+
+
+</div>
+</body>
+</html>
