@@ -8,5 +8,5 @@ Currently in the repo:
 <ul>
  <li>Checkbox group (chkGroup)<br>
 <p>A directive to generate a set of checkboxes based on an array of objects.<br>
-Returns a comma seperated list of id's.</p>
+Returns a comma seperated list of selected values (not object references).</p>
 </ul>
